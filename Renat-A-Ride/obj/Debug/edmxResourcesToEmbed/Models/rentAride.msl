@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RentARideModel3StoreContainer" CdmEntityContainer="RentARideDBEntities">
+    <EntitySetMapping Name="airportServices">
+      <EntityTypeMapping TypeName="RentARideModel3.airportService">
+        <MappingFragment StoreEntitySet="airportService">
+          <ScalarProperty Name="airservID" ColumnName="airservID" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="carOwners">
+      <EntityTypeMapping TypeName="RentARideModel3.carOwner">
+        <MappingFragment StoreEntitySet="carOwner">
+          <ScalarProperty Name="ownerID" ColumnName="ownerID" />
+          <ScalarProperty Name="ownerName" ColumnName="ownerName" />
+          <ScalarProperty Name="ownerAddress" ColumnName="ownerAddress" />
+          <ScalarProperty Name="ownerPhone" ColumnName="ownerPhone" />
+          <ScalarProperty Name="ownerEmail" ColumnName="ownerEmail" />
+          <ScalarProperty Name="ownerPassword" ColumnName="ownerPassword" />
+          <ScalarProperty Name="ownerPassport" ColumnName="ownerPassport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cars">
+      <EntityTypeMapping TypeName="RentARideModel3.car">
+        <MappingFragment StoreEntitySet="cars">
+          <ScalarProperty Name="carID" ColumnName="carID" />
+          <ScalarProperty Name="carBrand" ColumnName="carBrand" />
+          <ScalarProperty Name="carModel" ColumnName="carModel" />
+          <ScalarProperty Name="carRegNum" ColumnName="carRegNum" />
+          <ScalarProperty Name="carRegYear" ColumnName="carRegYear" />
+          <ScalarProperty Name="carFitnessCertificate" ColumnName="carFitnessCertificate" />
+          <ScalarProperty Name="carPicture" ColumnName="carPicture" />
+          <ScalarProperty Name="serviceType" ColumnName="serviceType" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dailyServices">
+      <EntityTypeMapping TypeName="RentARideModel3.dailyService">
+        <MappingFragment StoreEntitySet="dailyService">
+          <ScalarProperty Name="dailyservID" ColumnName="dailyservID" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="drivers">
+      <EntityTypeMapping TypeName="RentARideModel3.driver">
+        <MappingFragment StoreEntitySet="drivers">
+          <ScalarProperty Name="driverID" ColumnName="driverID" />
+          <ScalarProperty Name="carID" ColumnName="carID" />
+          <ScalarProperty Name="driverName" ColumnName="driverName" />
+          <ScalarProperty Name="driverLicenseNum" ColumnName="driverLicenseNum" />
+          <ScalarProperty Name="driverAddress" ColumnName="driverAddress" />
+          <ScalarProperty Name="ownerPassport" ColumnName="ownerPassport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hourlyServices">
+      <EntityTypeMapping TypeName="RentARideModel3.hourlyService">
+        <MappingFragment StoreEntitySet="hourlyService">
+          <ScalarProperty Name="hourservID" ColumnName="hourservID" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="monthlyServices">
+      <EntityTypeMapping TypeName="RentARideModel3.monthlyService">
+        <MappingFragment StoreEntitySet="monthlyService">
+          <ScalarProperty Name="monthID" ColumnName="monthID" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="normalServices">
+      <EntityTypeMapping TypeName="RentARideModel3.normalService">
+        <MappingFragment StoreEntitySet="normalService">
+          <ScalarProperty Name="serviceID" ColumnName="serviceID" />
+          <ScalarProperty Name="userservID" ColumnName="userservID" />
+          <ScalarProperty Name="pickupAddress" ColumnName="pickupAddress" />
+          <ScalarProperty Name="dropAddress" ColumnName="dropAddress" />
+          <ScalarProperty Name="ownerPassport" ColumnName="ownerPassport" />
+          <ScalarProperty Name="dateAndTime" ColumnName="dateAndTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="premiumServices">
+      <EntityTypeMapping TypeName="RentARideModel3.premiumService">
+        <MappingFragment StoreEntitySet="premiumService">
+          <ScalarProperty Name="subscriptionID" ColumnName="subscriptionID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="subscriptionDate" ColumnName="subscriptionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="RentARideModel3.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+          <ScalarProperty Name="userPhone" ColumnName="userPhone" />
+          <ScalarProperty Name="userAddress" ColumnName="userAddress" />
+          <ScalarProperty Name="userCity" ColumnName="userCity" />
+          <ScalarProperty Name="userNID" ColumnName="userNID" />
+          <ScalarProperty Name="userPassword" ColumnName="userPassword" />
+          <ScalarProperty Name="userType" ColumnName="userType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="weeklyServices">
+      <EntityTypeMapping TypeName="RentARideModel3.weeklyService">
+        <MappingFragment StoreEntitySet="weeklyService">
+          <ScalarProperty Name="weekID" ColumnName="weekID" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

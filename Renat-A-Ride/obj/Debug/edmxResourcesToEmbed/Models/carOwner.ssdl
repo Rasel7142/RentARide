@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RentARideModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="carOwner">
+    <Key>
+      <PropertyRef Name="ownerID" />
+    </Key>
+    <Property Name="ownerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ownerName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ownerAddress" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ownerPhone" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="ownerEmail" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ownerPassword" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ownerPassport" Type="varchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="RentARideModel1StoreContainer">
+    <EntitySet Name="carOwner" EntityType="Self.carOwner" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

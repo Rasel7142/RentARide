@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RentARideModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="airportService">
+    <Key>
+      <PropertyRef Name="airservID" />
+    </Key>
+    <Property Name="airservID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="carOwner">
+    <Key>
+      <PropertyRef Name="ownerID" />
+    </Key>
+    <Property Name="ownerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ownerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ownerAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ownerPhone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ownerEmail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ownerPassword" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ownerPassport" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="cars" Relationship="Self.FK__cars__ownerID__1920BF5C" FromRole="carOwner" ToRole="cars" />
+  </EntityType>
+  <EntityType Name="car">
+    <Key>
+      <PropertyRef Name="carID" />
+    </Key>
+    <Property Name="carID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ownerID" Type="Int32" />
+    <Property Name="carBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="carModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="carRegNum" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="carRegYear" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="carFitnessCertificate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="carPicture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="serviceType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="carOwner" Relationship="Self.FK__cars__ownerID__1920BF5C" FromRole="cars" ToRole="carOwner" />
+    <NavigationProperty Name="drivers" Relationship="Self.FK__drivers__carID__1BFD2C07" FromRole="cars" ToRole="drivers" />
+    <NavigationProperty Name="normalServices" Relationship="Self.FK__normalSer__carID__3B75D760" FromRole="cars" ToRole="normalService" />
+  </EntityType>
+  <EntityType Name="dailyService">
+    <Key>
+      <PropertyRef Name="dailyservID" />
+    </Key>
+    <Property Name="dailyservID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="driver">
+    <Key>
+      <PropertyRef Name="driverID" />
+    </Key>
+    <Property Name="driverID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="carID" Type="Int32" />
+    <Property Name="driverName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="driverLicenseNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="driverAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="car" Relationship="Self.FK__drivers__carID__1BFD2C07" FromRole="drivers" ToRole="cars" />
+  </EntityType>
+  <EntityType Name="hourlyService">
+    <Key>
+      <PropertyRef Name="hourservID" />
+    </Key>
+    <Property Name="hourservID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="monthlyService">
+    <Key>
+      <PropertyRef Name="monthID" />
+    </Key>
+    <Property Name="monthID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="normalService">
+    <Key>
+      <PropertyRef Name="serviceID" />
+    </Key>
+    <Property Name="serviceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userservID" Type="Int32" />
+    <Property Name="carID" Type="Int32" />
+    <Property Name="pickupAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dropAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dateAndTime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="car" Relationship="Self.FK__normalSer__carID__3B75D760" FromRole="normalService" ToRole="cars" />
+    <NavigationProperty Name="User" Relationship="Self.FK__normalSer__users__3A81B327" FromRole="normalService" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="premiumService">
+    <Key>
+      <PropertyRef Name="subscriptionID" />
+    </Key>
+    <Property Name="subscriptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userID" Type="Int32" />
+    <Property Name="subscriptionDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="User" Relationship="Self.FK__premiumSe__userI__286302EC" FromRole="premiumService" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userEmail" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userPhone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userCity" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userNID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userPassword" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="normalServices" Relationship="Self.FK__normalSer__users__3A81B327" FromRole="Users" ToRole="normalService" />
+    <NavigationProperty Name="premiumServices" Relationship="Self.FK__premiumSe__userI__286302EC" FromRole="Users" ToRole="premiumService" />
+  </EntityType>
+  <EntityType Name="weeklyService">
+    <Key>
+      <PropertyRef Name="weekID" />
+    </Key>
+    <Property Name="weekID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__cars__ownerID__1920BF5C">
+    <End Role="carOwner" Type="Self.carOwner" Multiplicity="0..1" />
+    <End Role="cars" Type="Self.car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="carOwner">
+        <PropertyRef Name="ownerID" />
+      </Principal>
+      <Dependent Role="cars">
+        <PropertyRef Name="ownerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__drivers__carID__1BFD2C07">
+    <End Role="cars" Type="Self.car" Multiplicity="0..1" />
+    <End Role="drivers" Type="Self.driver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cars">
+        <PropertyRef Name="carID" />
+      </Principal>
+      <Dependent Role="drivers">
+        <PropertyRef Name="carID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__normalSer__carID__3B75D760">
+    <End Role="cars" Type="Self.car" Multiplicity="0..1" />
+    <End Role="normalService" Type="Self.normalService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cars">
+        <PropertyRef Name="carID" />
+      </Principal>
+      <Dependent Role="normalService">
+        <PropertyRef Name="carID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__normalSer__users__3A81B327">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="normalService" Type="Self.normalService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="normalService">
+        <PropertyRef Name="userservID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__premiumSe__userI__286302EC">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="premiumService" Type="Self.premiumService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="premiumService">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RentARideEntitiesDB" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="airportServices" EntityType="Self.airportService" />
+    <EntitySet Name="carOwners" EntityType="Self.carOwner" />
+    <EntitySet Name="cars" EntityType="Self.car" />
+    <EntitySet Name="dailyServices" EntityType="Self.dailyService" />
+    <EntitySet Name="drivers" EntityType="Self.driver" />
+    <EntitySet Name="hourlyServices" EntityType="Self.hourlyService" />
+    <EntitySet Name="monthlyServices" EntityType="Self.monthlyService" />
+    <EntitySet Name="normalServices" EntityType="Self.normalService" />
+    <EntitySet Name="premiumServices" EntityType="Self.premiumService" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="weeklyServices" EntityType="Self.weeklyService" />
+    <AssociationSet Name="FK__cars__ownerID__1920BF5C" Association="Self.FK__cars__ownerID__1920BF5C">
+      <End Role="carOwner" EntitySet="carOwners" />
+      <End Role="cars" EntitySet="cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK__drivers__carID__1BFD2C07" Association="Self.FK__drivers__carID__1BFD2C07">
+      <End Role="cars" EntitySet="cars" />
+      <End Role="drivers" EntitySet="drivers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__normalSer__carID__3B75D760" Association="Self.FK__normalSer__carID__3B75D760">
+      <End Role="cars" EntitySet="cars" />
+      <End Role="normalService" EntitySet="normalServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__normalSer__users__3A81B327" Association="Self.FK__normalSer__users__3A81B327">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="normalService" EntitySet="normalServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__premiumSe__userI__286302EC" Association="Self.FK__premiumSe__userI__286302EC">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="premiumService" EntitySet="premiumServices" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

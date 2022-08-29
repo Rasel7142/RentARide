@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RentARideModel1StoreContainer" CdmEntityContainer="RentARideEntities5">
+    <EntitySetMapping Name="carOwners">
+      <EntityTypeMapping TypeName="RentARideModel1.carOwner">
+        <MappingFragment StoreEntitySet="carOwner">
+          <ScalarProperty Name="ownerID" ColumnName="ownerID" />
+          <ScalarProperty Name="ownerName" ColumnName="ownerName" />
+          <ScalarProperty Name="ownerAddress" ColumnName="ownerAddress" />
+          <ScalarProperty Name="ownerPhone" ColumnName="ownerPhone" />
+          <ScalarProperty Name="ownerEmail" ColumnName="ownerEmail" />
+          <ScalarProperty Name="ownerPassword" ColumnName="ownerPassword" />
+          <ScalarProperty Name="ownerPassport" ColumnName="ownerPassport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Renat_A_Ride.Models.driver>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="text-align:center;">DRIVER INFORMATION</h2>
+@Html.Partial("_OwnerLoginView")
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.driverName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.driverLicenseNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.driverAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.car.carID)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.driverName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.driverLicenseNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.driverAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.car.carID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.driverID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.driverID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.driverID })
+            </td>
+        </tr>
+    }
+
+</table>

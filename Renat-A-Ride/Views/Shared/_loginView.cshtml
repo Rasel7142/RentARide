@@ -1,0 +1,46 @@
+﻿
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand ms-lg-5 ms-auto" href="@Url.Action("/Index")">Rent A <span>Ride</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">@Html.ActionLink("Home", "Index", "Home")</li>
+                <li class="nav-item">@Html.ActionLink("About Us", "About", "Home")</li>
+                <li class="nav-item">@Html.ActionLink("Services", "Index", "Services")</li>
+                <li class="nav-item">@Html.ActionLink("Cars", "CarOwnerRegistration", "carOwner")</li>
+                <li class="nav-item">@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+            </ul>
+            <ul class="navbar-nav ms-lg-5 me-auto">
+                @if (Session["userID"] == null)
+                {
+                    <li class="nav-item"> @Html.ActionLink("Login/Registration", "UserRegistration", "User")</li>
+                }
+                else
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  fw-bold fst-italic" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                            @Session["UserName"].ToString()
+                            <img src="@Url.Content("~/Content/images/profile.png")" class="img-fluid rounded" alt="..." style="width:50px;height:50px">
+
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                            <li class="nav-item"> @Html.ActionLink("Log Out", "LogOut", "User")</li>
+                        </ul>
+                    </li>
+                }
+            </ul>
+        </div>
+
+    </div>
+
+</nav>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

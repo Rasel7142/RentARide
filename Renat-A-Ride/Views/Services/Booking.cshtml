@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewBag.Title = "Booking";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <style>
+
+        .backtext {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+
+            .backtext .heading-title {
+                font-size: 85px;
+                color: white;
+                font-weight: bold;
+                align-items: center;
+                justify-content: flex-start;
+                text-align: center;
+                font-family: "Gill Sans", sans-serif;
+                letter-spacing: 1px;
+                color: #8ED201;
+            }
+
+        .booking-container {
+            width: 80%;
+            border-radius: 15px;
+            padding: 2%;
+            margin: 0 auto;
+            box-shadow: 0 8px 8px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 4px );
+            -webkit-backdrop-filter: blur( 4px );
+        }
+
+        .content label {
+            font-size: 18px;
+            font-weight: 400;
+            color: #a2a2a2;
+            padding-left: 15px;
+        }
+
+        .content input {
+            border: 1px solid #8ED201;
+            border-radius: 25px;
+            background-color: #f8f8f8;
+            color: #000;
+            padding: 10px;
+        }
+
+            .content input:focus {
+                background-color: transparent;
+                color: #000;
+                border: 1px solid #8ED201;
+            }
+    </style>
+</head>
+
+<section>
+    <div class="backtext" style="background-image: url( '@Url.Content("~/Content/images/header-image-1.jpg")');
+          background-size: cover;
+          border-radius: 10px;
+          background-repeat: no-repeat;
+          background-position: center;
+          min-height: 30vh;">
+        <h2 class="heading-title">
+            <span>B</span>
+            <span>O</span>
+            <span>O</span>
+            <span>K</span>
+            <span>I</span>
+            <span>N</span>
+            <span>G</span>
+        </h2>
+    </div>
+</section>
+
+<section id="booking">
+    <div class="container-fluid">
+        <div class="booking-container">
+            <div class="container-fluid">
+                <form action="/Services/HourlyService" method="post" class="row form-content">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="content">
+                            <label for="Pick-Up" class="form-label">Pick-up Point: </label>
+                            <input type="text" class="form-control" id="Pick-Up" name="pickUpAddress" required />
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="content">
+                            <label for="drop-point" class="form-label">Drop-Off Point: </label>
+                            <input type="text" class="form-control" id="drop-point" name="dropOffAddress" required />
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="content">
+                            <label for="date-time" class="form-label">Data & Time: </label>
+                            <input type="datetime-local" class="form-control" id="dateTime" name="date-time">
+                        </div>
+                    </div>
+                    <div class="col-12 my-4 mx-auto w-100">
+                        <button onclick="bindAllData()" type="submit" class="logReg-btn">SUBMIT</button>
+                    </div>
+                    <div class="col-12 my-2">
+                        <label class="fw-bold fs-4 text-danger"> @ViewBag.BookingSuccess</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function bindAllData() {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("Booking", "Services")',
+            data: {
+                carID: localStorage.getItem("carID"),
+                pickup: document.getElementById("Pick-Up").value,
+                drop: document.getElementById("drop-point").value,
+                dateTime: document.getElementById("dateTime").value
+            },
+            success: function (data) {
+              //  alert("Booking Completed");
+            }
+        })
+    }
+</script>
+

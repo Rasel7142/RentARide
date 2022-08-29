@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Renat_A_Ride.Models.car>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="text-align:center;">CAR INFORMATION</h2>
+@Html.Partial("_OwnerLoginView")
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.carBrand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.carModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.carRegNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.carRegYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.carFitnessCertificate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.carPicture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serviceType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.carOwner.ownerName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.carBrand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.carModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.carRegNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.carRegYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.carFitnessCertificate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.carPicture)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.serviceType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.carOwner.ownerName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.carID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.carID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.carID })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,340 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*_layout css*/
+nav {
+    width: 100%;
+    background-color: #f7f7f7;
+    padding: 3%;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    font-weight: 800;
+    color: #000;
+    font-size: 30px;
+}
+
+    .navbar-brand span {
+        color: #8ED201;
+    }
+
+    .navbar-brand:hover {
+        color: #8ED201;
+        transition: all 0.6s ease-in;
+        transform: scale(1.05, 1.05);
+    }
+
+        .navbar-brand:hover span {
+            color: #000;
+            transition: all 0.6s ease-in;
+            transform: scale(1.05, 1.05);
+        }
+
+.nav-item {
+    margin: 0px 15px;
+}
+
+.navbar-nav .nav-item a {
+    text-decoration: none;
+    position: relative;
+    color: #000;
+    font-size: 20px;
+}
+
+.nav-item:hover a {
+    color: #8ED201;
+    transition: all 0.3s linear;
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: #7a7878;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(122, 120, 120, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+@media screen and (max-width: 991px) {
+    nav {
+        padding: 10px;
+    }
+
+    .nav-item {
+        margin-top: 8px;
+    }
+}
+
+#Footer {
+    margin-top: 2%;
+    width: 100%;
+}
+
+.Footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1% 2%;
+}
+
+.footer-content-container h2 {
+    font-weight: 700;
+    margin-bottom: 5%;
+    text-transform: uppercase;
+}
+
+.footer-content-links a {
+    display: block;
+    margin: 10px 0px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #5f5f5f;
+}
+
+    .footer-content-links a:hover {
+        color: #000;
+        transition: all 0.3s linear;
+    }
+
+        .footer-content-links a:hover span {
+            padding-left: 3px;
+            transition: all 0.3s linear;
+        }
+
+.footer-content-address p {
+    font-size: 18px;
+    margin: 10px 0px;
+    font-weight: 500;
+}
+
+.copyright {
+    text-align: center;
+    color: #a2a2a2;
+}
+
+/*------------------------index style---------------------*/
+img {
+    width: 100%;
+}
+section{
+    margin: 80px 0px;
+}
+
+.home-content {
+    padding: 1% 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+    .home-content h4 {
+        font-weight: 700;
+        color: #8ED201;
+        font-size: 4vw;
+    }
+
+.service-container h4 {
+    color: #8ED201;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 300;
+}
+
+.service-container h2 {
+    font-size: 40px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.service-container .service-content {
+    background-color: #222;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1%;
+}
+
+.service-content:hover {
+    transition: all 0.5s linear;
+}
+
+.service-content img {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.service-content h5 {
+    font-weight: 700;
+    margin: 15px 0px;
+    padding: 1%;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+/*Register your car*/
+.car-register-container h4{
+    color: #fff;
+    width: 50%;
+    text-align: center;
+}
+.car-register-container h5 {
+    color: #8ED201;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 300;
+}
+.car-register-container h2 {
+    font-size: 40px;
+    text-align: center;
+    font-weight: 600;
+}
+.car-register-container a{
+    display: inline-block;
+    margin-top: 40px;
+    padding: 10px 20px;
+    border: 1px solid #a2a2a2;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 6px;
+    background-color: #8ED201;
+}
+.car-register-container a:hover{
+    color: #000;
+    transition: all 0.5s linear;
+}
+/*why choose us*/
+.why-us h4 {
+    color: #8ED201;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 300;
+}
+.why-us h2 {
+    font-size: 40px;
+    text-align: center;
+    font-weight: 600;
+}
+.why-content img{
+    width: 50px;
+    height: 60px;
+}
+.why-content {
+    background-color: #f8f8f8;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 1%;
+}
+/*banner*/
+.banner-content {
+    width: 50%;
+    height: 70%;
+    padding: 3%;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.banner-content h3{
+    color: white;
+}
+.banner-content h3 span{
+    color: #8ED201;
+    font-size: 30px;
+}
+.banner-content p{
+    font-size: 20px;
+    color:white;
+}
+
+/*Login and registration*/
+.log-reg-container hr {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    color: #242B2E;
+    border-top: 3px solid #242b2e;
+}
+.log-reg-container input:focus {
+    border: 1px solid #8ED201;
+}
+.logReg-btn {
+    border: 1px solid #8ED201;
+    padding: 6px 20px;
+    color: #207398;
+    border-radius: 8px;
+}
+    .logReg-btn:hover {
+        background-color: #8ED201;
+        color: #fff;
+        transition: all 0.5s ease-in-out;
+    }
+
+.login, .Registration {
+    padding: 50px 2%;
+    border: 1px solid #f5f5f5;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    color: black;
+    box-shadow: 0 10px 10px -5px;
+}
+
+
+/*Login and registration for carowner*/
+.carownerlog-reg-container hr {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    color: #242B2E;
+    border-top: 3px solid #242b2e;
+}
+
+    
+
+.carownerlogReg-btn {
+    border: 1px solid #8ED201;
+    padding: 6px 20px;
+    color: #207398;
+    border-radius: 8px;
+}
+
+    .carownerlogReg-btn:hover {
+        background-color: #8ED201;
+        color: #fff;
+        transition: all 0.5s ease-in-out;
+    }

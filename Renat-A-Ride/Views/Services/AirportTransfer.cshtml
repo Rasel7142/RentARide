@@ -1,0 +1,123 @@
+﻿@model List<Renat_A_Ride.Models.car>
+@{
+    ViewBag.Title = "Airport Transfer Service";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+
+
+    <style>
+        .backtext {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+
+            .backtext .heading-title {
+                font-size: 85px;
+                color: white;
+                font-weight: bold;
+                align-items: center;
+                justify-content: flex-start;
+                text-align: center;
+                font-family: "Gill Sans", sans-serif;
+                letter-spacing: 1px;
+                color: #8ED201;
+            }
+
+        .headtitle {
+            margin-top: 20px;
+            color: #8ED201;
+            text-align: center;
+        }
+
+        .price-btn a {
+            text-decoration: none;
+            border: 1px solid #8ED201;
+            padding: 6px 20px;
+            color: #207398;
+            border-radius: 8px;
+            cursor: grab;
+        }
+
+
+            .price-btn a:hover {
+                background-color: #8ED201;
+                color: #fff;
+                transition: all 0.5s ease-in-out;
+                cursor: grab;
+            }
+    </style>
+</head>
+
+
+<section>
+    <div class="backtext" style="background-image: url( '@Url.Content("~/Content/images/header-image-1.jpg")');
+          background-size: cover;
+          border-radius: 10px;
+          background-repeat: no-repeat;
+          background-position: center;
+          min-height: 20vh;">
+        <h2 class="heading-title">
+            <span>P</span>
+            <span>R</span>
+            <span>I</span>
+            <span>C</span>
+            <span>I</span>
+            <span>N</span>
+            <span>G</span>
+
+        </h2>
+
+    </div>
+    <div class="headtitle">
+        <h3>AIRPORT TRANSFER</h3>
+        <p style="color:black;">No more worries about Airport Transfers in Bangladesh!! Try our service to save time and hassle on your next trip to Bangladesh.</p>
+    </div>
+</section>
+
+<section>
+    <div class="container-fluid">
+        <div class="row g-3">
+
+            @foreach (var car in Model)
+            {
+                <div class="col-md-4 col-sm-6">
+                    <div class="card">
+                        <img src="@Url.Content(car.carPicture)" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"> @car.carModel </h5>
+                            <div class="price-btn d-flex justify-content-around align-items-center">
+                                <h5>Rate: <span>@car.rate</span> </h5>
+
+
+                                @if (Session["userID"] == null)
+                                {
+                                    <a href="@Url.Action("../User/UserRegistration")">Book</a>
+                                }
+                                else
+                                {
+                                    <a onclick="passCarID(@car.carID)"> Book</a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<script>
+
+    function passCarID(carID) {
+        localStorage.setItem("carID", carID);
+        location.replace("/Services/Booking");
+    }
+
+</script>
+
+
+

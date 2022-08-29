@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewBag.Title = "Services";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link rel="stylesheet" href="@Url.Action("/Content/services.css")" />
+</head>
+
+<section>
+    <div class="backtext">
+        <h1 class="heading-title">
+            <span>S</span>
+            <span>E</span>
+            <span>R</span>
+            <span>V</span>
+            <span>I</span>
+            <span>C</span>
+            <span>E</span>
+            <span>S</span>
+        </h1>
+        <h4>Our Latest Services</h4>
+    </div>
+</section>
+
+<section><div class="servtitle"><h1>Regular Services</h1></div></section>
+
+<div class="service">
+
+    <div class="row row-cols-1 row-cols-md-3">
+
+        <div class="card col mb-4" style="width: 24em; margin: 1em;">
+            <img src="@Url.Content("~/Content/images/service-title-1.png")" class="card-img" style="width:23em;" />
+            <div class="card-body">
+                <div class="card-title">
+                    <h3>Hourly Rent</h3>
+                    <p>Only for Travelling inside Dhaka Metro </p>
+                </div>
+                <div>
+                    <p><a href="@Url.Action("/HourlyService")" class="btn btn-primary" style="background-color: #8ED201;">Details</a></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="card col mb-4" style="width:24em;margin:1em;">
+            <img src="@Url.Content("~/Content/images/service-title-2.png")" class="card-img" style="width:23em;" />
+            <div class="card-body">
+                <div class="card-title">
+                    <h3>Airport Transfer</h3>
+                    <p>Pick & Drop to and from Airport </p>
+                </div>
+
+                <div>
+                    <p><a href="@Url.Action("/AirportTransfer")" class="btn btn-primary" style="background-color: #8ED201;">Details</a></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="card col mb-4" style="width:24em;margin:1em;">
+            <img src="@Url.Content("~/Content/images/service-title-3.png")" class="card-img" style="width:23em;" />
+            <div class="card-body">
+                <div class="card-title">
+                    <h3>Daily Basis Rent Inside Dhaka</h3>
+                    <p>Excluding Fuel & Driver Cost </p>
+                </div>
+
+                <div>
+                    <p><a href="@Url.Action("/DailyService")" class="btn btn-primary" style="background-color: #8ED201;">Details</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="servtitle" style="margin-top:70px"><h1>Premium Services</h1></div>
+
+<div class="service">
+
+    <div class="row row-cols-1 row-cols-md-3" style="margin-bottom:80px;">
+
+        <div class="card col mb-4" style="width:24em;margin:8em;">
+            <img src="@Url.Content("~/Content/images/service-title-4.png")" class="card-img" style="width:23em;" />
+            <div class="card-body">
+                <div class="card-title">
+                    <h3>Weekly Basis Rent</h3>
+                    <p>Excluding Fuel & Driver Cost </p>
+                </div>
+
+                <div>
+                    <p><a href="@Url.Action("/HourlyService")" class="btn btn-primary" style="background-color: #8ED201;">Details</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="card col mb-4" style="width:24em;margin:8em;">
+            <img src="@Url.Content("~/Content/images/service-title-5.png")" class="card-img" style="width:23em;" />
+            <div class="card-body">
+                <div class="card-title">
+                    <h3>Monthly Basis Rent</h3>
+                    <p>Travel Anywhere</p>
+                </div>
+                <div>
+                    <p><a href="@Url.Action("/HourlyService")" class="btn btn-primary" style="background-color: #8ED201;">Details</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.6.0.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script type="text/javascript">
+    $('.card').hover(
+        function () {
+            $(this).animate({
+                marginTop: "-=1%",
+                marginBottom: "+=1%"
+            }, 200)
+        },
+        function () {
+            $(this).animate({
+                marginTop: "+=1%",
+                marginBottom: "-=1%"
+            })
+        }
+
+    )
+</script>
+
+
+

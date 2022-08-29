@@ -1,0 +1,60 @@
+﻿
+.backtext {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+
+    .backtext .heading-title {
+        font-size: 85px;
+        font-weight: bold;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: 40px;
+        font-family: "Gill Sans", sans-serif;
+        letter-spacing: 1px;
+        color:#8ED201;
+    }
+
+.servtitle {
+    font-size: 65px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #8ED201;
+    font-weight: bold;
+    width: 100%;
+    height: 60px;
+    text-align: center
+}
+
+
+.upperpart {
+    text-align: center;
+}
+
+.card:hover {
+    box-shadow: -1px 9px 40px -12px #8ED201;
+}
+
+.card-title {
+    text-align: center;
+    color: darkslategray;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.card-img {
+    text-align: center;
+}
+
+
+
+.btn {
+    margin-left: 3.5em;
+    font-size: larger;
+    font-weight: bold;
+    width: 10em;
+    height: 2em;
+}

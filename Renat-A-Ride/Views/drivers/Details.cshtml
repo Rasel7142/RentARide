@@ -1,0 +1,51 @@
+﻿@model Renat_A_Ride.Models.driver
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="text-align:center;">DETAILS</h2>
+@Html.Partial("_OwnerLoginView")
+<div>
+    <h4>Driver</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.driverName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.driverName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.driverLicenseNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.driverLicenseNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.driverAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.driverAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.car.carBrand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.car.carBrand)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <br /><br />
+    @Html.ActionLink("Edit", "Edit", new { id = Model.driverID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

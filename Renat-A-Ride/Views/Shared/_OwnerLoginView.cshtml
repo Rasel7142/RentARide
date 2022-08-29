@@ -1,0 +1,37 @@
+﻿
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand ms-lg-5 ms-auto" href="@Url.Action("/Index")">Rent A <span>Ride</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                
+                <li class="nav-item">@Html.ActionLink("Manage Cars", "Index", "cars")</li>
+                <li class="nav-item">@Html.ActionLink("ManageDriver", "Index", "drivers")</li>
+
+            </ul>
+            <ul class="navbar-nav ms-lg-5 me-auto">
+                @if (Session["ownerID"] == null)
+                {
+                    <li class="nav-item"> @Html.ActionLink("Login/Registration", "carOwnerRegistration", "cars")</li>
+                }
+                else
+                {
+                    <li class="nav-item"> @Html.ActionLink("Log Out", "LogOut", "carOwner")</li>
+                    <li class="nav-item fw-bold fst-italic">
+
+                        @Session["ownerName"].ToString()
+                    </li>
+                }
+
+            </ul>
+        </div>
+
+    </div>
+</nav>
